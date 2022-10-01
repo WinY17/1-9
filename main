@@ -1,0 +1,218 @@
+//2
+import math
+
+def main(y):
+    result1 = 0
+    if y<65:
+        result1 =(13*y**2+y**3+1)**6-y**5
+    elif 65<y<124:
+        result1 = 48**2-19*y**14
+    elif 124<=y<140:
+        result1 =(abs(y))**5
+    elif y>=140:
+        result1 = y**5-math.cos(y)-1
+    return result1
+
+print(main(49))
+print(main(97))
+print(main(47))
+print(main(39))
+print(main(101))
+
+//3
+import math
+
+def f(a,n,m,z):
+    first = 0
+    second = 0
+    for j in range(1,n+1):
+        for k in range(1,a+1):
+            first +=(46*math.sin(k)**6+(k+j**2)**5)
+    for i in range(1,n+1):
+        for j in range(1,m+1):
+            for k in range(1, a + 1):
+                second += (1-(math.ceil(j**3+z))**2-61*(4*i-k**2))
+    return first - second
+
+print(f(3,5,3,0.59))
+print(f(4,4,2,0.17))
+print(f(8,3,4,0.17))
+print(f(5,2,6,-0.52))
+print(f(5,5,5,-0.95))
+//4
+def f(a,n,m,z):
+    first = 0
+    second = 0
+    for j in range(1,n+1):
+        for k in range(1,a+1):
+            first +=(46*math.sin(k)**6+(k+j**2)**5)
+    for i in range(1, n + 1):
+        for j in range(1, m+1):
+            for k in range(1,a+1):
+                second += (1-(math.ceil(j**3+z))**2-61*(4*i-k**2))
+    return first - second
+
+
+print(f(3,5,3,0.59))
+//5
+import math
+
+def f(z):
+    result1 = 0
+    n=len(z)
+    for i in range(1,n+1):
+        result1 += 72*math.cos(z[n+1-i-1]**2-1)**5
+    return 71*result1
+
+print(f([-0.31, 0.94, 0.57, -0.45, 0.64, -0.92, -0.04, 0.91]))
+ //6
+ import math
+
+def main(x):
+    if x[0]=='KIT':
+        return x1(x)
+    elif x[0]=='GAMS':
+        return 11
+def x1(x):
+    if x[1]=='LOGOS':
+        return x2(x)
+    elif x[1]=='GLSL':
+        return X2(x)
+    elif x[1]=='SAGE':
+        return 10
+def x2(x):
+    if x[2]== 2009:
+        return x4(x)
+    elif x[2] == 1995:
+        return 3
+    elif x[2] == 2008:
+        return 4
+def x4(x):
+    if x[4] == 'EJS':
+        return 0
+    elif x[4] == 'XML':
+        return 1
+    elif x[4] == 'XOJO':
+        return 2
+def X2(x):
+    if x[2] == 2009:
+        return 5
+    elif x[2] == 1995:
+        return X4(x)
+    elif x[2] == 2008:
+        return 9
+def X4(x):
+    if x[4] == 'EJS':
+        return 6
+    elif x[4] == 'XML':
+        return 7
+    elif x[4] == 'XOJO':
+        return 8
+print (main(['GAMS','LOGOS', 2008, 'M', 'XML']))
+print (main(['KIT','SAGE', 1995, 'M', 'EJS']))
+print (main(['KIT','GLSL', 2008, 'SQL', 'JOJO']))
+print (main(['KIT','GLSL', 2009, 'M', 'EJS']))
+print (main(['KIT','LOGOS', 1995, 'SQL', 'EJS']))
+//7
+import math
+def main(x):
+    A = x & 0b1111_1111_1111
+    B = x>>12 & 0b1111_1111_1111
+    C = x>>24 & 0b11
+    D = x>>26 & 0b1111_1
+    E = x>>31 & 0b1
+    result = E | (C<<1) | (A<<3) | (D<<15) | (B<<20)
+    return result
+
+print(hex(main(0x3c572da1)))
+print(hex(main(0x6fa90640)))
+//8
+import math
+def main(x):
+    x = x.replace(' ','')
+    x = x.replace('"','')
+    result = {}
+    index = ""
+    value = ""
+    for i in range(len(x)-1):
+        if x[i] == '@':
+            for j in range(i+1,len(x)):
+                if x[j] == '<':
+                    break
+                index += x[j]
+        if x[i] == '-':
+            for j in range(i+1,len(x)):
+                if x[j] == '|':
+                    break
+                value += x[j]
+            result[index] = value
+            index = ""
+            value = ""
+    return result
+
+
+print(main('| store @"lamaaon"<- atesbe_496 |.| store @"isbete" <- cebeus_15 |.| store @"tisoen" <- ores |.'))
+//9
+class main:
+    state='A'
+    def __init_(self):
+        self.state="A"
+    def grow(self):
+        match self.state:
+            case "A":
+                self.state="B"
+                return 0
+            case "B":
+                self.state="C"
+                return 2
+            case "C":
+                self.state="D"
+                return 3
+            case "D":
+                self.state="E"
+                return 4
+            case "E":
+                self.state="F"
+                return 6
+            case "F":
+                self.state="D"
+                return 9
+            case "G":
+                return KeyError
+    def pluck(self):
+        match self.state:
+            case "A":
+                self.state = "G"
+                return 1
+            case "B":
+                return KeyError
+            case "C":
+                return KeyError
+            case "D":
+                self.state = "D"
+                return 5
+            case "E":
+                self.state = "E"
+                return 7
+            case "F":
+                self.state = "G"
+                return 8
+            case "G":
+                return KeyError
+
+
+o = main()
+print(o.grow()) # 0
+print(o.grow()) # 2
+print(o.pluck()) # KeyError
+print(o.grow()) # 3
+print(o.pluck()) # 5
+print(o.grow()) # 4
+print(o.pluck()) # 7
+print(o.grow()) # 6
+print(o.grow()) # 9
+print(o.pluck()) # 5
+print(o.pluck()) # 5
+print(o.grow()) # 4
+print(o.grow()) # 6
+print(o.pluck()) # 8
