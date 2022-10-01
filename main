@@ -1,3 +1,12 @@
+//1
+from math import sqrt
+
+
+def main(z):
+    res1 = (88 * (23 * z + z ** 2) ** 6 - 17 * z ** 4) / (88 * z ** 5)
+    res2 = sqrt(z ** 7)
+    return res1 - res2
+
 //2
 import math
 
